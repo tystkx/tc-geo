@@ -1,0 +1,309 @@
+html, body {
+    height: 100%; /* Задаем высоту для html и body */
+    margin: 0; /* Убираем отступы */
+    background-color: #000000; /* Темный фон */
+    color: #f8f8f8; /* Светлый текст */
+    font-family: Arial, sans-serif; /* Шрифт для всего документа */
+    display: flex; /* Используем Flexbox для макета */
+    flex-direction: column; /* Вертикальное направление элементов */
+    overflow-x: hidden; /* Скрываем горизонтальные полосы прокрутки */
+}
+
+body {
+    background: linear-gradient(135deg, #121212, #212121); /* Градиентный фон */
+}
+
+
+
+.containeraventura {
+    width: 90%; /* Ширина контейнера в процентах */
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: auto; /* Центрирование контейнера */
+    padding: 20px; /* Внутренние отступы контейнера */
+    flex-grow: 1; /* Разрешение контейнеру занимать оставшееся пространство */
+    display: flex; /* Используем Flexbox для макета */
+    flex-direction: column; /* Вертикальное направление элементов */
+    align-items: center; /* Выравнивание элементов по центру */
+}
+
+.gradient-text {
+    font-size: 50px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: transparent; /* Сделать текст прозрачным */
+    background-image: linear-gradient(to right, 
+        #fcb2d7, /* Светло-розовый */
+        #fa74b7, /* Нежный розовый */
+        #ff57ab, /* Розовый */
+        #fc329d, /* Яркий розовый */
+        #fd007f  /* Темный розовый */
+    ); 
+    -webkit-background-clip: text; /* Для поддержки в WebKit-браузерах */
+    background-clip: text; /* Основное свойство для обрезки фона по тексту */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 20px; /* Отступ снизу */
+    animation: gradientAnimation 10s infinite alternate; /* Анимация градиента */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0%; /* Начальная позиция градиента */
+    }
+    100% {
+        background-position: 100%; /* Конечная позиция градиента */
+    }
+}
+
+header {
+    background: linear-gradient(135deg, #121212, #212121); /* Градиентный фон */
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Выравнивание текста по центру */
+    position: relative; /* Позиционирование относительно ближайшего позиционированного родителя */
+    z-index: 10; /* Порядок отображения элементов */
+}
+
+header h1 {
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.search-container {
+    display: flex; /* Используем Flexbox для макета */
+    justify-content: center; /* Выравнивание элементов по центру */
+    margin-bottom: 20px; /* Отступ снизу */
+    position: relative; /* Позиционирование относительно ближайшего позиционированного родителя */
+}
+
+#search {
+    padding: 10px 20px; /* Внутренние отступы */
+    width: 80%; /* Ширина поля поиска */
+    max-width: 600px; /* Максимальная ширина поля поиска */
+    border: none; /* Убираем границу */
+    border-radius: 30px; /* Круглые углы */
+    transition: width 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease; /* Плавное изменение ширины, цвета и тени */
+    background-color: #212121; /* Фон поля поиска */
+    color: white; /* Цвет текста */
+    outline: none; /* Убираем рамку при фокусе */
+    font-size: 16px; /* Размер шрифта */
+}
+
+#search:focus {
+    width: 90%; /* Ширина поля поиска при фокусе */
+    background-color: #333; /* Фон поля поиска при фокусе */
+    box-shadow: 0 0 15px rgba(255, 219, 236, 0.644); /* Тень при фокусе */
+    padding: 10px 70px; /* Внутренние отступы при фокусе */
+}
+
+nav {
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+nav a {
+    color: #ff69b4; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    font-size: 18px; /* Размер шрифта */
+    transition: color 0.3s ease, transform 0.3s ease; /* Плавное изменение цвета и трансформации */
+    display: inline-flex; /* Используем Flexbox для макета */
+    align-items: center; /* Выравнивание элементов по центру */
+}
+
+nav a:hover {
+    color: #ffffff; /* Цвет текста ссылки при наведении */
+    transform: scale(1.05); /* Масштабирование ссылки при наведении */
+}
+
+nav a i {
+    margin-right: 5px; /* Отступ справа от иконки */
+}
+
+ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+    display: flex; /* Используем Flexbox для макета */
+    flex-wrap: wrap; /* Перенос элементов на новую строку */
+    justify-content: center; /* Выравнивание элементов по центру */
+    gap: 20px; /* Промежуток между элементами */
+    width: 100%; /* Ширина списка */
+}
+
+li {
+    padding: 10px; /* Внутренние отступы */
+    background: #121212; /* Фон элемента списка */
+    border-radius: 16px; /* Круглые углы */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Тень */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Плавное изменение тени и трансформации */
+    width: 10px; /* Ширина элемента списка */
+    min-width: 300px; /* Минимальная ширина элемента списка */
+    position: relative; /* Позиционирование относительно ближайшего позиционированного родителя */
+    overflow: hidden; /* Скрытие переполненного контента */
+}
+
+li:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 1); /* Тень при наведении */
+    transform: translateY(-10px); /* Поднятие элемента при наведении */
+}
+
+li a {
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    color: white; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    display: block; /* Элемент занимает всю ширину родительского элемента */
+    padding: 15px; /* Внутренние отступы */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+    position: relative; /* Позиционирование относительно ближайшего позиционированного родителя */
+    z-index: 1; /* Порядок отображения элементов */
+}
+
+li a:hover {
+    color: #ffffff; /* Цвет текста ссылки при наведении */
+}
+
+li::before {
+    content: ''; /* Добавляем псевдоэлемент */
+    position: absolute; /* Позиционирование относительно ближайшего позиционированного родителя */
+    top: 0; /* Позиция сверху */
+    left: -100%; /* Позиция слева */
+    width: 100%; /* Ширина псевдоэлемента */
+    height: 100%; /* Высота псевдоэлемента */
+    background: linear-gradient(to right, 
+        rgba(245, 195, 220, 0.7),
+        rgba(255, 20, 147, 0.7)
+    ); /* Градиентный фон */
+    transition: left 0.5s ease; /* Плавное изменение позиции слева */
+    z-index: 0; /* Порядок отображения элементов */
+}
+
+li:hover::before {
+    left: 0; /* Позиция слева при наведении */
+}
+
+.mall-image {
+    width: 100%; /* Ширина изображения */
+    border-radius: 16px; /* Круглые углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавное изменение трансформации и тени */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+/* .mall-image:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7); 
+} */
+
+#mall-details {
+    width: 80%; /* Ширина блока с информацией о ТЦ */
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(15, 15, 15, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание по левому краю */
+    margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: -410px; /* Поднимаем блок на 20 пикселей вверх */
+}
+
+/* #mall-details:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+}*/
+
+#mall-details h2 {
+    margin-bottom: 10px; /* Отступ снизу */
+    color: #ff69b4; /* Цвет заголовка */
+    font-size: 28px; /* Размер шрифта */
+}
+
+#mall-details p {
+    margin-bottom: 10px; /* Отступ снизу */
+    font-size: 16px; /* Размер шрифта */
+}
+
+footer {
+    text-align: center; /* Выравнивание текста по центру */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #0a0a0a; /* Темный цвет подвала */
+    color: white; /* Цвет текста */
+    position: fixed; /* Фиксированное позиционирование */
+    width: 100%; /* Ширина подвала */
+    bottom: 0; /* Позиция снизу */
+    z-index: 10; /* Порядок отображения элементов */
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5); /* Тень */
+}
+
+footer p {
+    animation: footerPulse 2s infinite alternate; /* Анимация текста в подвале */
+}
+
+@keyframes footerPulse {
+    0% {
+        transform: scale(1); /* Исходный масштаб */
+    }
+    100% {
+        transform: scale(1.02); /* Конечный масштаб */
+    }
+}
+
+.whitestrip {
+    height: 2px; /* Высота линии */
+    background-color: white; /* Белый цвет линии */
+    width: 90%; /* Ширина линии */
+    margin: 0 auto; /* Центрирование линии */
+}
+
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column; /* Вертикальное направление элементов */
+        align-items: center; /* Выравнивание элементов по центру */
+    }
+
+    li {
+        width: 100%; /* Полная ширина элемента списка */
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.shops-list {
+    width: 30%;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 0%;
+}
+
+.shop-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.shop-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+}
+
+.shop-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.shop-link:hover {
+    color: #ffffff;
+}
+
+.main-content {
+    width: 70%;
+    /* Добавьте дополнительные стили для основного блока по необходимости */
+}
